@@ -18,44 +18,47 @@ function App() {
   }
   const times = [
     {
-      nome: "Desenvolvedor Web",
+      nome: "Programação",
       corPrimaria: "#E06B69",
       corSecundaria: "#FDE7E8",
     },
     {
-      nome: "Scrum Master",
+      nome: "Front-End",
       corPrimaria: "#A6D157",
       corSecundaria: "#F0F8E2",
     },
     {
-      nome: "Cientista de dados", 
+      nome: "Data Science", 
       corPrimaria: "#82CFFA",
       corSecundaria: "#E8F8FF",
     },
     {
-      nome: "Segurança da Informação",
+      nome: "Devops",
       corPrimaria: "#FEBA05",
       corSecundaria: "#FFF5D9",
     },
     {
-      nome: "Programação",
+      nome: "UX e Design",
       corPrimaria: "#57C278",
       corSecundaria: "#D9F7E9",
     },
     
     {
-      nome: "UX e Design",
+      nome: "Mobile",
       corPrimaria: "#D86EBF",
       corSecundaria: "#FAE5F5",
     },
     
     {
       nome: "Inovação e Gestão",
-      corPrimaria: "#FF8A29",
-      corSecundaria: "FFEEDF'",
+      corPrimaria: "#FFBA05",
+      corSecundaria: "#FFF5D9",
     },
   ]
 
+  function deletarColaborador (){
+    console.log("Deletando colaborador")
+  }
   return (
 
     <div className="App">
@@ -68,14 +71,16 @@ function App() {
 
       <h1>Minha Organização</h1>
 
-        {times.map((time, indice) => <Time
-        key= {indice}
-        nome= {time.nome}
-        corPrimaria= {time.corPrimaria}
-        corSecundaria= {time.corSecundaria}
-        
-        colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
-        />)}
+        {times.map((time, indice) => 
+          <Time
+            key= {indice}
+            nome= {time.nome}
+            corPrimaria= {time.corPrimaria}
+            corSecundaria= {time.corSecundaria}
+            colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
+            aoDeletar={deletarColaborador}
+          />)
+        }
       </section>
       <Rodape />
       

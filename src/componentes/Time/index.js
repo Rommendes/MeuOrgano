@@ -9,7 +9,7 @@ const Time = (props, aoDeletar)=> {
             <h3 style={{borderColor: props.corPrimaria}}>  {props.nome}</h3>
             
             <div className='colaboradores' >
-                {props.colaboradores.map((colaborador, indice) => {
+                {props.colaboradores.map(colaborador => {
                  console.log("Renderizando ", <Colaborador 
                 corDeFundo= {props.corPrimaria}
                 key= {colaborador.nome}
@@ -20,7 +20,7 @@ const Time = (props, aoDeletar)=> {
                 />)
                     return<Colaborador 
                     corDeFundo= {props.corPrimaria}
-                    key= {indice}
+                    key= {colaborador.nome}
                     nome= {colaborador.nome}
                     cargo= {colaborador.cargo}
                     imagem = {colaborador.imagem} 
