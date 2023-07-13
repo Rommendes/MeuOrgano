@@ -57,20 +57,15 @@ function App() {
   ]
 
   function deletarColaborador (){
-    console.log("Deletando colaborador")
-  }
-  return (
-
+    console.log("Deletando colaborador")}
+  
+    return (
     <div className="App">
-
       <Banner/>
       <Formulario times= {times.map(time => time.nome) } aoColaboradorCadastrado = {colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
 
-      
       <section className='times'> 
-
       <h1>Minha Organização</h1>
-
         {times.map((time, indice) => 
           <Time
             key= {indice}

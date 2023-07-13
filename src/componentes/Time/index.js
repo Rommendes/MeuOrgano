@@ -10,14 +10,9 @@ const Time = (props, aoDeletar)=> {
             
             <div className='colaboradores' >
                 {props.colaboradores.map(colaborador => {
-                 console.log("Renderizando ", <Colaborador 
-                corDeFundo= {props.corPrimaria}
-                key= {colaborador.nome}
-                nome= {colaborador.nome}
-                cargo= {colaborador.cargo}
-                imagem = {colaborador.imagem} 
-                aoDeletar= {aoDeletar}
-                />)
+                
+                console.log("Renderizando ")
+
                     return<Colaborador 
                     corDeFundo= {props.corPrimaria}
                     key= {colaborador.nome}
