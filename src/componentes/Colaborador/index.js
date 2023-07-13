@@ -4,8 +4,6 @@ const Colaborador = ({nome, imagem, cargo, corDeFundo, aoDeletar})=> {
     return (
         <div  className='colaborador'>
 
-       
-
         <button onClick={() => aoDeletar()}>Fechar</button>
 
             <div className='cabecalho' style={{background: corDeFundo}}>

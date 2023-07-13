@@ -2,6 +2,9 @@ import Colaborador from '../Colaborador'
 import './Time.css'
 
 const Time = (props, aoDeletar)=> {
+    function aoDeletar() {
+        console.log("deletar")
+    }
     return (
 
         (props.colaboradores.length >0 )? <section className='time' style={{backgroundColor: props.corSecundaria, backgroundImage: 'url(/imagens/fundo.png)'}}>
@@ -11,7 +14,14 @@ const Time = (props, aoDeletar)=> {
             <div className='colaboradores' >
                 {props.colaboradores.map(colaborador => {
                 
-                console.log("Renderizando ")
+                console.log("Renderizando ", <Colaborador 
+                corDeFundo= {props.corPrimaria}
+                key= {colaborador.nome}
+                nome= {colaborador.nome}
+                cargo= {colaborador.cargo}
+                imagem = {colaborador.imagem} 
+                aoDeletar= {aoDeletar}
+                />)
 
                     return<Colaborador 
                     corDeFundo= {props.corPrimaria}
