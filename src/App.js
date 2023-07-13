@@ -55,11 +55,10 @@ function App() {
       corSecundaria: "#FFF5D9",
     },
   ]
-
+  
   function deletarColaborador (){
     console.log("Deletando colaborador")}
-  
-    return (
+  return (
     <div className="App">
       <Banner/>
       <Formulario times= {times.map(time => time.nome) } aoColaboradorCadastrado = {colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
