@@ -1,9 +1,11 @@
 import Colaborador from '../Colaborador'
 import './Time.css'
 
-const Time = (props, aoDeletar)=> {
+const Time = (props)=> {
+    
     function aoDeletar() {
         console.log("deletar")
+        
     }
     return (
 
@@ -12,7 +14,7 @@ const Time = (props, aoDeletar)=> {
             <h3 style={{borderColor: props.corPrimaria}}>  {props.nome}</h3>
             
             <div className='colaboradores' >
-                {props.colaboradores.map(colaborador => {
+                {props.colaboradores.map(colaborador=> {
                 
                 console.log("Renderizando ", <Colaborador 
                     corDeFundo= {props.corPrimaria}

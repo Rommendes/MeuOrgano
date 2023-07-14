@@ -6,7 +6,7 @@ const Colaborador = ({nome, imagem, cargo, corDeFundo, aoDeletar})=> {
 
         <div className='deletar' onClick={aoDeletar}> Deletar 
         </div>
-        <button onClick={() => aoDeletar()}>Fechar</button>
+       
         
             <div className='cabecalho' style={{background: corDeFundo}}>
                 <img src= {imagem} alt= {nome} />
