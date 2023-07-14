@@ -23,7 +23,7 @@ function App() {
       corSecundaria: "#FDE7E8",
     },
     {
-      nome: "Front-End",
+      nome: "Analista",
       corPrimaria: "#A6D157",
       corSecundaria: "#F0F8E2",
     },
@@ -44,7 +44,7 @@ function App() {
     },
     
     {
-      nome: "Mobile",
+      nome: "Celular",
       corPrimaria: "#D86EBF",
       corSecundaria: "#FAE5F5",
     },
