@@ -3,7 +3,7 @@ import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario/Index';
 import Time from './componentes/Time';
 import Rodape from './componentes/Rodape';
-
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -18,41 +18,41 @@ function App() {
   }
   const times = [
     {
+      id: uuidv4(),
       nome: "Programação",
-      corPrimaria: "#E06B69",
-      corSecundaria: "#FDE7E8",
+      cor: "#FDE7E8",
     },
     {
+      id: uuidv4(),
       nome: "Analista",
-      corPrimaria: "#A6D157",
-      corSecundaria: "#F0F8E2",
+      cor: "#F0F8E2",
     },
-    {
+    { 
+      id: uuidv4(), 
       nome: "Data Science", 
-      corPrimaria: "#82CFFA",
-      corSecundaria: "#E8F8FF",
+      cor: "#E8F8FF",
     },
     {
+      id: uuidv4(),
       nome: "Devops",
-      corPrimaria: "#FEBA05",
       corSecundaria: "#FFF5D9",
     },
     {
+      id: uuidv4(),
       nome: "UX e Design",
-      corPrimaria: "#57C278",
-      corSecundaria: "#D9F7E9",
+      cor: "#D9F7E9",
     },
     
     {
+      id: uuidv4(),
       nome: "Celular",
-      corPrimaria: "#D86EBF",
-      corSecundaria: "#FAE5F5",
+      cor: "#FAE5F5",
     },
     
     {
+      id: uuidv4(),
       nome: "Inovação e Gestão",
-      corPrimaria: "#FFBA05",
-      corSecundaria: "#FFF5D9",
+      cor: "#FFF5D9",
     },
   ]
   
@@ -68,9 +68,7 @@ function App() {
         {times.map((time, indice) => 
           <Time
             key= {indice}
-            nome= {time.nome}
-            corPrimaria= {time.corPrimaria}
-            corSecundaria= {time.corSecundaria}
+            nome= {time}
             colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}
           />)
