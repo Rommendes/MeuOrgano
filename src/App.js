@@ -4,69 +4,79 @@ import Formulario from './componentes/Formulario/Index';
 import Time from './componentes/Time';
 import Rodape from './componentes/Rodape';
 import { v4 as uuidv4 } from 'uuid';
-
-
-
 function App() {
 
+  const [times, setTimes] = useState([
+   {
+    id: uuidv4(),
+    nome: 'Programação',
+    cor: '#57C278'
+  },
+  {
+    id: uuidv4(),
+    nome: 'Front-End',
+    cor: '#82CFFA'
+  },
+  {
+    id: uuidv4(),
+    nome: 'Data Science',
+    cor: '#A6D157'
+  },
+  {
+    id: uuidv4(),
+    nome: 'Devops',
+    cor: '#E06B69'
+  },
+  {
+    id: uuidv4(),
+    nome: 'UX e Design',
+    cor: '#DB6EBF'
+  },
+  {
+    id: uuidv4(),
+    nome: 'Mobile',
+    cor: '#FFBA05'
+  },
+  {
+    id: uuidv4(),
+    nome: 'Inovação e Gestão',
+    cor: '#FF8A29'
+  },
+    
+  ])
   const [colaboradores, setColaboradores] = useState([]);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     //debugger
-
     setColaboradores([...colaboradores, colaborador])
   }
-  const times = [
-    {
-      id: uuidv4(),
-      nome: "Programação",
-      cor: "#FDE7E8",
-    },
-    {
-      id: uuidv4(),
-      nome: "Analista",
-      cor: "#F0F8E2",
-    },
-    { 
-      id: uuidv4(), 
-      nome: "Data Science", 
-      cor: "#E8F8FF",
-    },
-    {
-      id: uuidv4(),
-      nome: "Devops",
-      corSecundaria: "#FFF5D9",
-    },
-    {
-      id: uuidv4(),
-      nome: "UX e Design",
-      cor: "#D9F7E9",
-    },
-    
-    {
-      id: uuidv4(),
-      nome: "Celular",
-      cor: "#FAE5F5",
-    },
-    
-    {
-      id: uuidv4(),
-      nome: "Inovação e Gestão",
-      cor: "#FFF5D9",
-    },
-  ]
-  
+
   function deletarColaborador (){
-    console.log("Deletando colaborador")}
+    console.log("Deletando colaborador")
+  }
+  function mudarCorDoTime(cor, nome){
+    setTimes(times.map(time => {
+      if(time.nome === nome){
+        time.cor = cor;
+      }
+      return time;
+    }))
+  }
+
   return (
     <div className="App">
       <Banner/>
-      <Formulario times= {times.map(time => time.nome) } aoColaboradorCadastrado = {colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+      <Formulario 
+      times= {times.map(time => time.nome) }
+      aoCadastrar= {colaborador=> setColaboradores([...colaboradores, colaborador])} aoColaboradorCadastrado ={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
 
       <section className='times'> 
+
       <h1>Minha Organização</h1>
+
         {times.map((time, indice) => 
           <Time
+            mudarCorDoTime={mudarCorDoTime}
             key= {indice}
             nome= {time}
             colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
