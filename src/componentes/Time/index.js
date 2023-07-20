@@ -1,9 +1,9 @@
-/*import { type } from '@testing-library/user-event/dist/type';*/
+import { type } from '@testing-library/user-event/dist/type';
 import Colaborador from '../Colaborador'
 import './Time.css'
-/*import hexToRgba from 'hex-to-rgba';*/
+import hexToRgba from 'hex-to-rgba';
 
-const Time = (props)=> {
+const Time = ({ colaboradores, time, aoDeletar, mudarCor})=> {
     
     function aoDeletar() {
         console.log("deletar")
@@ -11,23 +11,24 @@ const Time = (props)=> {
     }
    
     return (
-        props.colaboradores.length > 0 && 
+        colaboradores.length > 0 && 
         <section 
-            className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', background: props.corPrimaria}}>
+            className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor:hexToRgba(time.cor, 0.3) }}>
 
-            <input type= 'color' className='input-cor'/>
+            <input onChange={evento=>mudarCor(evento.target.value, time.nome)} value={time.cor} type= 'color' className='input-cor'/>
 
-            <h3 style={{borderColor: props.corSecundaria}}>  {props.nome}</h3>
+            <h3 style={{borderColor: time.cor}}>  {time.nome}</h3>
             
             <div className='colaboradores' >
-                {props.colaboradores.map(colaborador=> { 
+                {colaboradores.map(colaborador=> { 
                     (console.log('Renderizando'))
+                    
                     return<Colaborador 
                         key= {colaborador.nome}
                         nome= {colaborador.nome}
                         cargo= {colaborador.cargo}
                         imagem = {colaborador.imagem} 
-                        corDeFundo= {props.corSecundaria}
+                        corDeFundo= {time.cor}
                         aoDeletar= {aoDeletar}
                 />
                     })}

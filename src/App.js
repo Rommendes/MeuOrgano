@@ -3,48 +3,46 @@ import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario/Index';
 import Time from './componentes/Time';
 import Rodape from './componentes/Rodape';
-/*import { v4 as uuidv4 } from 'uuid';*/
+import { v4 as uuidv4 } from 'uuid';
 function App() {
 
-  const times = [
+  const [times, setTimes] = useState([
     {
-      nome: "Desenvolvedor Web",
-      corPrimaria: "#E06B69",
-      corSecundaria: "#FDE7E8",
+      id: uuidv4(),
+      nome: 'Programação',
+      cor: '#57C278'
     },
     {
-      nome: "Scrum Master",
-      corPrimaria: "#A6D157",
-      corSecundaria: "#F0F8E2",
+      id: uuidv4(),
+      nome: 'Front-End',
+      cor: '#82CFFA'
     },
     {
-      nome: "Cientista de dados", 
-      corPrimaria: "#82CFFA",
-      corSecundaria: "#E8F8FF",
+      id: uuidv4(),
+      nome: 'Data Science',
+      cor: '#A6D157'
     },
     {
-      nome: "Segurança da Informação",
-      corPrimaria: "#FEBA05",
-      corSecundaria: "#FFF5D9",
+      id: uuidv4(),
+      nome: 'Devops',
+      cor: '#E06B69'
     },
     {
-      nome: "Programação",
-      corPrimaria: "#57C278",
-      corSecundaria: "#D9F7E9",
+      id: uuidv4(),
+      nome: 'UX e Design',
+      cor: '#DB6EBF'
     },
-    
     {
-      nome: "UX e Design",
-      corPrimaria: "#D86EBF",
-      corSecundaria: "#FAE5F5",
+      id: uuidv4(),
+      nome: 'Mobile',
+      cor: '#FFBA05'
     },
-    
     {
-      nome: "Inovação e Gestão",
-      corPrimaria: "#FF8A29",
-      corSecundaria: "#FFEEDF",
+      id: uuidv4(),
+      nome: 'Inovação e Gestão',
+      cor: '#FF8A29'
     },
-  ]
+    ]);
 
     
   const [colaboradores, setColaboradores] = useState([]);
@@ -57,14 +55,14 @@ function App() {
   function deletarColaborador (){
     console.log("Deletando colaborador")
   }
- /* function mudarCorDoTime(cor, id){
+  function mudarCorDoTime(cor, id){
     setTimes(times.map(time => {
       if(time.nome === id){
         time.cor = cor;
       }
       return time;
     }))
-  }*/
+  }
 
   return (
     <div className="App">
@@ -83,11 +81,10 @@ function App() {
         {times.map((time, indice) => 
           <Time
             key= {indice}
-            nome= {time.nome}
-            corPrimaria= {time.corPrimaria}
-            corSecundaria= {time.corSecundaria}
+            time={time}
             colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}
+            mudarCor={mudarCorDoTime}
           />)
         }
       </section>
