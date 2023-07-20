@@ -3,7 +3,7 @@ import Colaborador from '../Colaborador'
 import './Time.css'
 /*import hexToRgba from 'hex-to-rgba';*/
 
-const Time = ({props})=> {
+const Time = (props)=> {
     
     function aoDeletar() {
         console.log("deletar")
