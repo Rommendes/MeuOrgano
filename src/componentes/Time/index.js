@@ -3,21 +3,26 @@ import Colaborador from '../Colaborador'
 import './Time.css'
 import hexToRgba from 'hex-to-rgba';
 
-const Time = ({ colaboradores, time, mudarCor})=> {
+const Time = ({ colaboradores, aoDeletar, time, mudarCor})=> {
     
-    function aoDeletar() {
-        console.log("deletar")
+    //function aoDeletar() {
+        //console.log("deletar")
         
-    }
+    //}
      
-    console.log("colaboradores",colaboradores)
+    //console.log("colaboradores",colaboradores)
 
     return (
         colaboradores.length > 0 && 
         <section 
-            className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor:hexToRgba(time.cor, 0.3) }}>
+            className='time' 
+            style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor:hexToRgba(time.cor, 0.3) }}>
 
-            <input onChange={evento=>mudarCor(evento.target.value, time.id)} value={time.cor} type= 'color' className='input-cor'/>
+            <input onChange={evento=>
+                mudarCor   (evento.target.value, time.id)} 
+                value={time.cor} 
+                type= 'color' className='input-cor'
+            />
 
             <h3 style={{borderColor: time.cor}}>  {time.nome}</h3>
             
@@ -27,11 +32,12 @@ const Time = ({ colaboradores, time, mudarCor})=> {
                     
                     return (
                     <Colaborador 
+                        key={colaborador.nome}
                         colaborador={colaborador} 
                         corDeFundo={time?.cor}
                         aoDeletar={aoDeletar}
                     
-                         />
+                    />
                     )
                     })}
             </div>
