@@ -44,20 +44,23 @@ function App() {
     },
     ]);
 
+    const adicionado =[
+      { id: uuidv4()}
+    ]
     
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState([adicionado]);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     //debugger
     setColaboradores([...colaboradores, colaborador])
   }
 
-  function deletarColaborador (){
-    console.log("Deletando colaborador")
+  function deletarColaborador (prop){
+    console.log("Deletando colaborador: ", prop)
   }
   function mudarCorDoTime(cor, id){
     setTimes(times.map(time => {
-      if(time.nome === id){
+      if(time.id === id){
         time.cor = cor;
       }
       return time;
@@ -82,7 +85,7 @@ function App() {
           <Time
             key= {indice}
             time={time}
-            colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome)}
+            colaboradores = {colaboradores.filter(colaborador => colaborador.time === time.nome) }
             aoDeletar={deletarColaborador}
             mudarCor={mudarCorDoTime}
           />)
