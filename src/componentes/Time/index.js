@@ -34,7 +34,7 @@ const Time = ({ colaboradores, aoDeletar, time, mudarCor})=> {
                     <Colaborador 
                         key={colaborador.nome}
                         colaborador={colaborador} 
-                        corDeFundo={time?.cor}
+                        corDeFundo={time.cor}
                         aoDeletar={aoDeletar}
                     
                     />
