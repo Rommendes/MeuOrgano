@@ -44,11 +44,16 @@ function App() {
     },
     ]);
 
-    const adicionado =[
-      { id: uuidv4()}
+    const inicial =[
+      { id: uuidv4(),
+        nome: "",
+        cargo: "",
+        imagem: "",
+        time: "",
+      }
     ]
     
-  const [colaboradores, setColaboradores] = useState([adicionado]);
+  const [colaboradores, setColaboradores] = useState(inicial);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     //debugger

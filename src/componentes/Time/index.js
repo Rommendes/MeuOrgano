@@ -1,4 +1,4 @@
-import { type } from '@testing-library/user-event/dist/type';
+
 import Colaborador from '../Colaborador'
 import './Time.css'
 import hexToRgba from 'hex-to-rgba';
@@ -10,7 +10,7 @@ const Time = ({ colaboradores, aoDeletar, time, mudarCor})=> {
         
     //}
      
-    //console.log("colaboradores",colaboradores)
+    console.log("colaboradores",colaboradores)
 
     return (
         colaboradores.length > 0 && 
