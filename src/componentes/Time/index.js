@@ -27,12 +27,12 @@ const Time = ({ colaboradores, aoDeletar, time, mudarCor})=> {
             <h3 style={{borderColor: time.cor}}>  {time.nome}</h3>
             
             <div className='colaboradores' >
-                {colaboradores.map(colaborador=> { 
+                {colaboradores.map((colaborador, indice)=> { 
                    // (console.log('Renderizando'))
                     
                     return (
                     <Colaborador 
-                        key={colaborador.nome}
+                        key={indice}
                         colaborador={colaborador} 
                         corDeFundo={time.cor}
                         aoDeletar={aoDeletar}
