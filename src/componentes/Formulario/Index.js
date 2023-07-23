@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
 
-const Formulario = (aoCriarTime, aoColaboradorCadastrado,times)=> {
+const Formulario = (aoCriarTime, aoColaboradorCadastrado, times)=> {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -64,9 +64,9 @@ const Formulario = (aoCriarTime, aoColaboradorCadastrado,times)=> {
                 <ListaSuspensa  
                     obrigatorio={true} 
                     label="Time" 
-                    itens = {times}
+                    itens= {times}
                     valor= {time}
-                    aoAlterado = {valor => setTime (valor) }
+                    aoAlterado= {valor => setTime (valor)}
                 />
                 <Botao>
                     Criar Card
