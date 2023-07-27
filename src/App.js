@@ -77,7 +77,7 @@ function App() {
       <Banner/>
 
       <Formulario 
-      times= {times.map(time => time.nome) }
+      times= {times}
       aoCadastrar= {colaborador=> 
       setColaboradores([...colaboradores, colaborador])} 
       aoColaboradorCadastrado ={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>

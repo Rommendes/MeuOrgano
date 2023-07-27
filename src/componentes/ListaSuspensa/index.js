@@ -1,25 +1,26 @@
-import Time from '../Time'
-import './ListaSuspensa.css'
+import { useEffect } from "react";
 
-const ListaSuspensa= ({label, obrigatorio, valor, aoAlterado, itens}) => {
-    return(
-        <div className='listaSuspensa'>
-            <label> {label} </label>
+import "./ListaSuspensa.css";
 
-            <select required= {obrigatorio} value={valor} onChange={evento => aoAlterado(evento.target.value)}> 
-                {itens?.map((item)=> (
-                    <option key={item} > 
-                        {item} 
-                    </option>
-                ))}
-                    
-    </select>
-       
-           
+const ListaSuspensa = ({ label, obrigatorio, valor, aoAlterado, itens }) => {
+  useEffect(() => {
+    console.log(itens);
+  }, [itens]);
+  return (
+    <div className="listaSuspensa">
+      <label> {label} </label>
 
-        </div>) 
+      <select
+        required={obrigatorio}
+        value={valor}
+        onChange={(evento) => aoAlterado(evento.target.value)}
+      >
+        {itens?.map((item) => (
+          <option key={item.id}>{item.nome}</option>
+        ))}
+      </select>
+    </div>
+  );
+};
 
-    }        
-    
-
-export default ListaSuspensa
+export default ListaSuspensa;
