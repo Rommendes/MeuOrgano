@@ -53,7 +53,7 @@ function App() {
       }
     ]
     
-  const [colaboradores, setColaboradores] = useState(inicial);
+  const [colaboradores, setColaboradores] = useState([inicial]);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     //debugger
@@ -81,6 +81,7 @@ function App() {
       aoCadastrar= {colaborador=> 
       setColaboradores([...colaboradores, colaborador])} 
       aoColaboradorCadastrado ={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+     
 
       <section className='times'> 
 

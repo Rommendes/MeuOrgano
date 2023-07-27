@@ -6,6 +6,7 @@ import './Formulario.css'
 
 const Formulario = (aoCriarTime, aoColaboradorCadastrado, times)=> {
 
+
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
