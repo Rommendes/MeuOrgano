@@ -8,8 +8,6 @@ const Time = ({ colaboradores, aoDeletar, time, mudarCor }) => {
 
   //}
 
-  /*console.log("colaboradores",colaboradores)*/
-
   return (
     colaboradores.length > 0 && (
       <section
