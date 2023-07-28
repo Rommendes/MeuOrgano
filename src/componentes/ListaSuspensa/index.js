@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import "./ListaSuspensa.css";
 
-const ListaSuspensa = ({ label, obrigatorio, valor, aoAlterado, itens }) => {
+const ListaSuspensa = ({ label, obrigatorio= false, valor, aoAlterado, itens }) => {
   useEffect(() => {
     console.log(itens);
   }, [itens]);

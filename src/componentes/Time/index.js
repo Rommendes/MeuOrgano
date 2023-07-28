@@ -42,6 +42,7 @@ const Time = ({ colaboradores, aoDeletar, time, mudarCor }) => {
         </div>
       </section>
     )
+  
 
     //QDO NÃO TEM NENHUM COLABORADOR O TIME NÃO APARECE
     //(props.colaboradores.length >0 )?

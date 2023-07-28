@@ -43,9 +43,17 @@ function App() {
     },
   ]);
 
-  const inicial = [{ id: uuidv4(), nome: "", cargo: "", imagem: "", time: "" }];
+  const colaborador = [
+    {
+      id: uuidv4(),
+      nome: "",
+      cargo: "",
+      imagem: "",
+      time: times[""],
+    },
+  ];
 
-  const [colaboradores, setColaboradores] = useState(inicial);
+  const [colaboradores, setColaboradores] = useState(colaborador);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     //debugger
@@ -53,9 +61,12 @@ function App() {
   };
 
   function deletarColaborador(id) {
-    setColaboradores(colaboradores.filter((colaborador) => colaborador.id !== id));
+    console.log("Deletou colaborador: ", colaborador.id);
+    setColaboradores(
+      colaboradores.filter((colaborador) => colaborador.id !== id)
+    );
+
     
-    //console.log("Deletando colaborador: ");
   }
   function mudarCorDoTime(cor, id) {
     setTimes(
