@@ -2,10 +2,16 @@ import { useEffect } from "react";
 
 import "./ListaSuspensa.css";
 
-const ListaSuspensa = ({ label, obrigatorio= false, valor, aoAlterado, itens }) => {
-  useEffect(() => {
+const ListaSuspensa = ({
+  label,
+  obrigatorio = false,
+  valor,
+  aoAlterado,
+  itens,
+}) => {
+  /* useEffect(() => {
     console.log(itens);
-  }, [itens]);
+  }, [itens]);*/
   return (
     <div className="listaSuspensa">
       <label> {label} </label>

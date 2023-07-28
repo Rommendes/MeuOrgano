@@ -3,10 +3,11 @@ import "./Time.css";
 import hexToRgba from "hex-to-rgba";
 
 const Time = ({ colaboradores, aoDeletar, time, mudarCor }) => {
-  //function aoDeletar() {
-  //console.log("deletar")
-
-  //}
+  
+  //Função criada qdo não apareciam os cards
+  function aoDeletar() {
+   console.log("excluir");}
+ 
 
   return (
     colaboradores.length > 0 && (
@@ -42,7 +43,6 @@ const Time = ({ colaboradores, aoDeletar, time, mudarCor }) => {
         </div>
       </section>
     )
-  
 
     //QDO NÃO TEM NENHUM COLABORADOR O TIME NÃO APARECE
     //(props.colaboradores.length >0 )?

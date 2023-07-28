@@ -13,8 +13,8 @@ const Formulario = ({ aoCriarTime, aoColaboradorCadastrado, times }) => {
   const [nomeTime, setNomeTime] = useState("");
 
   const aoSalvar = (evento) => {
-    evento.preventDefault({nome, cargo, imagem, time});
-    
+    evento.preventDefault({ nome, cargo, imagem, time });
+
     aoColaboradorCadastrado({
       nome,
       cargo,
