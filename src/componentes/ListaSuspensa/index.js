@@ -21,6 +21,7 @@ const ListaSuspensa = ({
         value={valor}
         onChange={(evento) => aoAlterado(evento.target.value)}
       >
+        <option value= ""> </option>
         {itens?.map((item) => (
           <option key={item.id}>{item.nome}</option>
         ))}

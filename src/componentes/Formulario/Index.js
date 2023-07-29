@@ -53,7 +53,7 @@ const Formulario = ({ aoCriarTime, aoColaboradorCadastrado, times }) => {
 
         <CampoTexto
           label="Imagem"
-          placeholder="Digite o endereco da imagem"
+          placeholder="Digite o endereço da imagem"
           valor={imagem}
           aoAlterado={(valor) => setImagem(valor)}
         />
