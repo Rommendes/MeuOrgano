@@ -4,6 +4,7 @@ import Formulario from "./componentes/Formulario/Index";
 import Time from "./componentes/Time";
 import Rodape from "./componentes/Rodape";
 import { v4 as uuidv4 } from "uuid";
+
 function App() {
   const [times, setTimes] = useState([
     {
@@ -43,29 +44,37 @@ function App() {
     },
   ]);
 
-  const colaborador = [
-    {
-      id: uuidv4(),
-      nome: "",
-      cargo: "",
-      imagem: "",
-      time: times[""],
-    },
-  ];
+  // const colaborador = [
+  //   {
+  //     id: uuidv4(),
+  //     nome: "Ro Mendes",
+  //     cargo: "",
+  //     imagem: "",
+  //     time: times[""],
+  //   },
+  // ];
 
-  const [colaboradores, setColaboradores] = useState(colaborador);
+  const [colaboradores, setColaboradores] = useState([]);
+
+  console.log("COLABORADORES: ", colaboradores);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     //debugger
-    setColaboradores([...colaboradores, colaborador]);
+    setColaboradores(prevState => [...prevState, colaborador]);//AQUI
   };
 
-  function deletarColaborador([id]) {
-    console.log("Deletou colaborador: ", colaborador.id);
-    setColaboradores(
-      colaboradores.filter((colaborador) => colaborador.id !== id)
+  const deletarColaborador = (id) => {
+    console.log("Deletou colaborador: ", id);
+
+    const colaboradoresFiltrados = colaboradores?.filter(//AQUI
+      (colaborador) => colaborador.id !== id 
     );
+
+    console.log("Colaboradores filtrados: ", colaboradoresFiltrados); //AQUI
+    setColaboradores(colaboradoresFiltrados);
+
   }
+
   function mudarCorDoTime(cor, id) {
     setTimes(
       times.map((time) => {
@@ -101,7 +110,7 @@ function App() {
             colaboradores={colaboradores.filter(
               (colaborador) => colaborador.time === time.nome
             )}
-            aoDeletar={deletarColaborador}
+            onClickDeleteColaborador={(idDoColaborador)=>deletarColaborador(idDoColaborador)} //AQUI
             mudarCor={mudarCorDoTime}
           />
         ))}

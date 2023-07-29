@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Botao from "../Botão";
 import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
@@ -16,6 +17,7 @@ const Formulario = ({ aoCriarTime, aoColaboradorCadastrado, times }) => {
     evento.preventDefault({ nome, cargo, imagem, time });
 
     aoColaboradorCadastrado({
+      id: uuidv4(),
       nome,
       cargo,
       imagem,

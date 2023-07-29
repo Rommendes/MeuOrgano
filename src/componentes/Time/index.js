@@ -2,12 +2,7 @@ import Colaborador from "../Colaborador";
 import "./Time.css";
 import hexToRgba from "hex-to-rgba";
 
-const Time = ({ colaboradores, aoDeletar, time, mudarCor }) => {
-  
-  //Função criada qdo não apareciam os cards
-  function aoDeletar() {
-   console.log("excluir");}
- 
+const Time = ({ colaboradores, time, mudarCor, onClickDeleteColaborador }) => {
 
   return (
     colaboradores.length > 0 && (
@@ -30,13 +25,12 @@ const Time = ({ colaboradores, aoDeletar, time, mudarCor }) => {
         <div className="colaboradores">
           {colaboradores.map((colaborador, indice) => {
             // (console.log('Renderizando'))
-
             return (
               <Colaborador
                 key={indice}
                 colaborador={colaborador}
                 corDeFundo={time.cor}
-                aoDeletar={aoDeletar}
+                onClickDelete={()=>onClickDeleteColaborador(colaborador.id)}
               />
             );
           })}
