@@ -5,7 +5,7 @@ import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
 
-const Formulario = ({ aoCriarTime, aoColaboradorCadastrado, times }) => {
+const Formulario = ({ cadastrarTime, aoColaboradorCadastrado, times }) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -15,6 +15,7 @@ const Formulario = ({ aoCriarTime, aoColaboradorCadastrado, times }) => {
 
   const aoSalvar = (evento) => {
     evento.preventDefault({ nome, cargo, imagem, time });
+    console.log('form enviado', nome, cargo, imagem, time);
 
     aoColaboradorCadastrado({
       id: uuidv4(),
@@ -72,24 +73,26 @@ const Formulario = ({ aoCriarTime, aoColaboradorCadastrado, times }) => {
         className="formulario"
         onSubmit={(evento) => {
           evento.preventDefault();
-          aoCriarTime({ nome: nomeTime, cor: corTime });
+          cadastrarTime({ nome: nomeTime, cor: corTime });
         }}
       >
         <h2>Preencha os dados para criar um novo time</h2>
 
         <CampoTexto
-          obrigatorio={true}
+          obrigatorio
           label="Nome"
           placeholder="Digite o nome do time"
           valor={nomeTime}
-          aoAlterado={(valor) => setNomeTime(valor)}
+          aoAlterado={(valor) => 
+          setNomeTime(valor)}
         />
         <CampoTexto
-          obrigatorio={true}
+          obrigatorio
           label="Cor"
           placeholder="Digite sua cor"
           valor={corTime}
-          aoAlterado={(valor) => setCorTime(valor)}
+          aoAlterado={(valor) => 
+          setCorTime(valor)}
         />
 
         <Botao>Criar Time</Botao>
