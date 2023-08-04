@@ -114,7 +114,8 @@ function App() {
             colaboradores={colaboradores.filter(
               (colaborador) => colaborador.time === time.nome
             )}
-            onClickDeleteColaborador={(idDoColaborador)=>deletarColaborador(idDoColaborador)} //AQUI
+            onClickDeleteColaborador=
+            {(idDoColaborador)=>deletarColaborador(idDoColaborador)} //AQUI
             mudarCor={mudarCorDoTime}
           />
         ))}
