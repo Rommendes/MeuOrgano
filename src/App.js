@@ -44,17 +44,18 @@ function App() {
     },
   ]);
 
-  // const colaborador = [
-  //   {
-  //     id: uuidv4(),
-  //     nome: "Ro Mendes",
-  //     cargo: "",
-  //     imagem: "",
-  //     time: times[""],
-  //   },
-  // ];
+   const colaborador = [
+     {
+      id: uuidv4(),
+      favorito: false,
+      nome: "Ro Mendes",
+      cargo: "",
+      imagem: "",
+      time: times[""],
+     },
+   ];
 
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState(colaborador);
 
   console.log("COLABORADORES: ", colaboradores);
 
@@ -89,6 +90,15 @@ function App() {
     setTimes([...times, {...novoTime, id: uuidv4()}]);
   }
 
+  function resolverFavorito(id){
+    setColaboradores(
+      colaboradores.filter((colaborador)=>{
+        if(colaborador.id === id) colaborador.favorito= !colaborador.favorito;
+        return colaborador;
+      })
+    )
+
+  }
   return (
     <div className="App">
       <Banner />
@@ -117,6 +127,7 @@ function App() {
             onClickDeleteColaborador=
             {(idDoColaborador)=>deletarColaborador(idDoColaborador)} //AQUI
             mudarCor={mudarCorDoTime}
+            aoFavoritar= {resolverFavorito}
           />
         ))}
       </section>
