@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Botao from "../Botão";
-import CampoTexto from "../CampoTexto";
+import Campo from "../Campo";
 import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
 
@@ -36,7 +36,7 @@ const Formulario = ({ cadastrarTime, aoColaboradorCadastrado, times }) => {
       <form className="formulario" onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o Card do Colaborador</h2>
 
-        <CampoTexto
+        <Campo
           obrigatorio={true}
           label="Nome"
           placeholder="Digite seu nome"
@@ -44,7 +44,7 @@ const Formulario = ({ cadastrarTime, aoColaboradorCadastrado, times }) => {
           aoAlterado={(valor) => setNome(valor)}
         />
 
-        <CampoTexto
+        <Campo
           obrigatorio={true}
           label="Cargo"
           placeholder="Digite seu cargo"
@@ -52,7 +52,7 @@ const Formulario = ({ cadastrarTime, aoColaboradorCadastrado, times }) => {
           aoAlterado={(valor) => setCargo(valor)}
         />
 
-        <CampoTexto
+        <Campo
           label="Imagem"
           placeholder="Digite o endereço da imagem"
           valor={imagem}
@@ -78,7 +78,7 @@ const Formulario = ({ cadastrarTime, aoColaboradorCadastrado, times }) => {
       >
         <h2>Preencha os dados para criar um novo time</h2>
 
-        <CampoTexto
+        <Campo
           obrigatorio
           label="Nome"
           placeholder="Digite o nome do time"
@@ -86,8 +86,9 @@ const Formulario = ({ cadastrarTime, aoColaboradorCadastrado, times }) => {
           aoAlterado={(valor) => 
           setNomeTime(valor)}
         />
-        <CampoTexto
+        <Campo
           obrigatorio
+          type= 'color'
           label="Cor"
           placeholder="Digite sua cor"
           valor={corTime}
