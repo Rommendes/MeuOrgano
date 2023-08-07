@@ -18,12 +18,26 @@
   margin-right: 0;
 }
 @media only screen and (min-width: 300px) {
-  .logo, .texto, .imagem {
-    display: block;
-    text-align: center;
-  }
-
-  #logo {
+  .footer .imagem  .logo {
+    display: inline-block;
+    text-align: left;
+    margin-right: 10px;
     margin: 0 auto 10px;
+    max-width: 50%;
+    height: auto;
   }
+.footer{
+  justify-content: center;
+  
+}
+.footer .texto {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  justify-content: flex-end;
+}
+.footer .logo{
+  image: url(/imagens/logoCopia.png/)
+}
 }

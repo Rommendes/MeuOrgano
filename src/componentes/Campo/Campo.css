@@ -19,3 +19,9 @@
     padding: 5px 24px;
     height: 40px ;
 }
+@media only screen and (min-width: 300px){
+  .formulario-container .cor{
+    height: 10px
+    
+}
+}

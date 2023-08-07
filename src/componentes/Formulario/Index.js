@@ -86,7 +86,8 @@ const Formulario = ({ cadastrarTime, aoColaboradorCadastrado, times }) => {
           aoAlterado={(valor) => 
           setNomeTime(valor)}
         />
-        <Campo
+        <Campo 
+          className="cor"
           obrigatorio
           type= 'color'
           label="Cor"
