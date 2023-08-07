@@ -17,7 +17,7 @@
 .footer ul li:last-child {
   margin-right: 0;
 }
-@media only screen and (min-width: 300px) {
+@media screen and (manx-width: 600px) {
   .footer .imagem  .logo {
     display: inline-block;
     text-align: left;
@@ -25,6 +25,7 @@
     margin: 0 auto 10px;
     max-width: 50%;
     height: auto;
+    background-image: url("/public/imagens/");
   }
 .footer{
   justify-content: center;
@@ -37,7 +38,5 @@
   margin-right: 10px;
   justify-content: flex-end;
 }
-.footer .logo{
-  image: url(/imagens/logoCopia.png/)
-}
+
 }
