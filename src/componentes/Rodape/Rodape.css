@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: auto;
+  
 }
 
 .footer ul li {
@@ -14,4 +16,14 @@
 
 .footer ul li:last-child {
   margin-right: 0;
+}
+@media only screen and (min-width: 300px) {
+  .logo, .texto, .imagem {
+    display: block;
+    text-align: center;
+  }
+
+  #logo {
+    margin: 0 auto 10px;
+  }
 }

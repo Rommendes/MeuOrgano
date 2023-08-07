@@ -3,19 +3,19 @@ import "./Rodape.css";
 const Rodape = () => {
   return (
     <footer className="footer">
-      <section>
+      <section className="imagem">
         <ul>
-          <li>
+          <li >
             <a href="faceboock.com" target="_blank">
               <img src="/imagens/fb.png" alt="" />
             </a>
           </li>
-          <li>
+          <li >
             <a href="twitter.com" target="_blank">
               <img src="/imagens/tw.png" alt="" />
             </a>
           </li>
-          <li>
+          <li >
             <a href="instagram.com" target="_blank">
               <img src="/imagens/ig.png" alt="" />
             </a>
@@ -23,11 +23,11 @@ const Rodape = () => {
         </ul>
       </section>
 
-      <section>
+      <section id="logo">
         <img src="imagens/logo.png" alt="" />
       </section>
 
-      <section>
+      <section id="texto"> 
         <p>Desenvolvido por alura</p>
       </section>
     </footer>
